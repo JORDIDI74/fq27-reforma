@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Revisión del proyecto · Fco. de Quevedo 27 · By Kaizen</title>
+<style>
+:root{--carbon:#1c1c1e;--marfil:#f4f1ea;--champan:#b08d57;--gris:#6b6f76}
+*{box-sizing:border-box}
+body{margin:0;background:var(--marfil);color:var(--carbon);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:18px 16px 60px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+header img{height:44px;width:auto}
+header .t{font-size:12px;color:var(--gris);letter-spacing:.3px;text-transform:uppercase}
+h1{font-size:24px;line-height:1.15;margin:6px 0 4px;font-weight:700;letter-spacing:-.3px}
+.sub{color:var(--gris);font-size:14px;margin:0 0 18px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0 18px}
+.kpi{background:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.kpi b{display:block;font-size:22px;letter-spacing:-.4px}
+.kpi span{font-size:12px;color:var(--gris)}
+.kpi.g b{color:#c0392b} .kpi.c b{color:var(--champan)}
+h2{font-size:18px;margin:26px 0 10px;letter-spacing:-.2px}
+.resumen{background:var(--carbon);color:var(--marfil);border-radius:18px;padding:16px 18px;font-size:15px}
+.resumen li{margin:0 0 8px} .resumen ul{padding-left:18px;margin:8px 0 0}
+.resumen b{color:#e6c892}
+.card{background:#fff;border-radius:18px;padding:14px 16px;margin:0 0 12px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.card .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--gris);margin-bottom:6px}
+.chip{color:#fff;border-radius:999px;padding:3px 9px;font-size:11.5px;font-weight:600;letter-spacing:.2px}
+.num{font-weight:700;color:var(--carbon)}
+.card h3{margin:0 0 6px;font-size:16px;line-height:1.25}
+.card p{margin:0 0 6px;font-size:14px}
+.card .corr{background:var(--marfil);border-radius:12px;padding:8px 10px}
+.card .imp{color:var(--champan);font-weight:600}
+.card .imp b{color:var(--carbon);font-weight:600}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;margin:0 0 12px;font-size:14px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid #eee;vertical-align:top}
+th{background:var(--carbon);color:var(--marfil);font-weight:600;font-size:12.5px}
+td.r,th.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+tr.hl td{background:#fbf6ec;font-weight:600}
+.small{font-size:12.5px;color:var(--gris)}
+ol{padding-left:20px} ol li{margin-bottom:8px;font-size:14.5px}
+.files li{margin-bottom:6px;font-size:14px;word-break:break-word}
+footer{margin-top:30px;font-size:12px;color:var(--gris);text-align:center}
+.btn{display:inline-block;background:var(--carbon);color:var(--marfil);text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:600;font-size:14px}
+.btn.alt{background:#fff;color:var(--carbon);border:1px solid #ddd}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 6px}
+@media (min-width:600px){.kpis{grid-template-columns:repeat(4,1fr)}}
+</style></head><body><div class="wrap">
+<header><img src="data:image/png;base64,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" alt="Kaizen Patrimonio"><div><div class="t">Revisión de proyecto · 30-10-2026 · versión 2</div></div></header>
+<h1>Reforma integral · C/ Francisco de Quevedo 27, San Sebastián de los Reyes</h1>
+<p class="sub">Casa de Álvaro y María · proyecto de Javier Iturralde (planos REV 1–13 y mediciones del 20-09-2026) · oferta del constructor y revisión del 26-10-2026. Revisado por Kaizen el 30-10-2026 a partir de los dos correos de Álvaro; segunda pasada verificando cada punto sobre los planos y los Excel.</p>
+<div class="btns"><a class="btn" href="visor-3d-casa-fco-quevedo-27.html">Abrir el visor 3D de la casa →</a><a class="btn alt" href="261030_FRANCISCO.QUEVEDO_OFERTA_REVISION_KAIZEN.xlsx">Excel de la oferta revisada</a></div>
+
+<div class="kpis">
+<div class="kpi g"><b>5</b><span>errores graves</span></div>
+<div class="kpi c"><b>12</b><span>importantes</span></div>
+<div class="kpi"><b>11</b><span>menores</span></div>
+<div class="kpi"><b>178.144 €</b><span>propuesta corregida (era 180.498 €)</span></div>
+</div>
+
+<div class="resumen"><b>En diez líneas</b>
+<ul>
+<li>El proyecto está bien planteado y la revisión de Javier es seria: ya ha cazado una decena de fallos de la oferta (residuos sin presupuestar, ayudas duplicadas, textos de ventanas, forrado de vigas…).</li>
+<li><b>Fallo de diseño principal:</b> al patio y al armario de lavadora/secadora se entra cómodamente solo por el dormitorio 1. V07 es una ventana con antepecho y V03 una corredera de ventana con hoja de 0,70.</li>
+<li><b>El patio se queda en 1,47 × 3,39 m.</b> Hay que confirmar que cumple la normativa municipal para el dormitorio 1 antes de pedir licencia.</li>
+<li><b>Dinero:</b> la propuesta de 180.498 € tiene un error de copia en los armarios (+2.355 €) → <b>178.144 €</b>. El total 'con IVA e ICIO' de 201.484 € olvida el IVA de los 30.600 € de clima: real ≈ <b>203.084 €–206.450 €</b>.</li>
+<li><b>Los 180.000 € son un objetivo, no una oferta:</b> incluyen pintar al 50 % con un pintor conocido (1.945 €), armarios y cocina al −25 % y clima por definir. Lo que vale es lo que firme el constructor.</li>
+<li><b>Ahorros que faltan por rascar (≈ 10.289 €):</b> hormigón de limpieza a 108,90 €/m², V03 al precio de V06, aplacado de cocina a precio de encimera, bancada y ayuda solar, ayuda de gas, control de suelo radiante, y una alternativa estándar a las ventanas de techo.</li>
+<li><b>Costes que no están (≈ +3.750 €):</b> V04 de 2,50 de alto, V01 si va hasta el suelo, V07 a suelo si se decide, 7 m² más de suelo radiante, premarcos de baños. Y un 5–10 % de imprevistos.</li>
+<li><b>Clima:</b> el capítulo mezcla equipos incompatibles; no cerrar nada hasta tener el esquema del instalador.</li>
+<li>Decisiones pendientes: V01/V03/V07, puerta de entrada (blanca o madera), armario del patio (aluminio o Prodema), solar sí/no.</li>
+</ul></div>
+
+<h2>Las cifras</h2>
+
+<table>
+<tr><th>Concepto</th><th class="r">Importe (sin IVA)</th></tr>
+<tr><td>Oferta 1 del constructor (archivo del 25-10-2026), sin gestión de residuos</td><td class="r">217.658,87 €</td></tr>
+<tr><td>Revisión 1 de Javier (mediciones corregidas + residuos)</td><td class="r">219.539,62 €</td></tr>
+<tr><td>Propuesta de ahorro de Javier (columna PROPUESTAS)</td><td class="r">180.498,32 €</td></tr>
+<tr class="hl"><td>Propuesta corregida (armario 05.04 al −25 %)</td><td class="r">178.143,55 €</td></tr>
+<tr><td>De esa propuesta, trabajo que se 'deja a medias' o se negocia: pintura al 50 % con un pintor conocido (1.945 €), armarios y cocina al −25 % (objetivo, no precio aceptado)</td><td class="r">—</td></tr>
+<tr><td>Ahorros adicionales identificados en esta revisión (estimación, pendientes de repreciar)</td><td class="r">-10.289 €</td></tr>
+<tr><td>Costes que faltan identificados (estimación)</td><td class="r">+3.750 €</td></tr>
+<tr><td>Fondo de imprevistos recomendado (5–10 %)</td><td class="r">+9.000 a +18.000 €</td></tr>
+</table>
+<table>
+<tr><th>Total con IVA e ICIO</th><th class="r">Importe</th></tr>
+<tr><td>Según la hoja de Javier (sin IVA en los 30.600 € de clima)</td><td class="r">201.484,08 €</td></tr>
+<tr class="hl"><td>Recalculado: IVA 10 % en todo + ICIO 4 % sobre toda la base, con el armario corregido</td><td class="r">203.084 €</td></tr>
+<tr class="hl"><td>Recalculado si el instalador de clima factura al 21 %</td><td class="r">206.450 €</td></tr>
+</table>
+<p class="small">El IVA del 10 % en obras de renovación exige que el material no supere el 40 % de la base de cada factura; en la del instalador de clima es difícil de cumplir. El ICIO (4 % en SS de los Reyes según la hoja) se aplica sobre el presupuesto de ejecución material completo, instalaciones incluidas. Las sumas de los Excel recibidos se han recalculado y cuadran.</p>
+
+
+<h2>Errores e incoherencias (28)</h2>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#c0392b">Grave</span><span class="num">01</span><span class="doc">Planos REV 10 · REV 2 · V07 · V03 · V04 · CER01</span></div>
+  <h3>El acceso cómodo al patio y al lavadero es por el dormitorio 1</h3>
+  <p class="que">V07 (salón–patio) es una ventana de 2,80 × 1,90: en el alzado arranca medio metro por encima del suelo y remata en el falso techo (antepecho ≈ 0,5 m, sin acotar). V03 (pasillo–patio) es una corredera de 1,40 × 2,20 de dos carriles con una hoja fija y otra corredera de 0,70, dibujada colgada del falso techo (≈ 30 cm sobre el suelo): pasar por ahí es saltar por una ventana. La única hoja que llega al suelo es V04, la corredera de 2,00 × 2,50 del dormitorio 1. El armario de lavadora y secadora (CER01), el sumidero y la planta del patio quedan detrás del dormitorio principal.</p>
+  <p class="corr"><b>Corrección:</b> Decidir el paso al patio antes de encargar la carpintería: V07 corredera a suelo (2,80 × 2,50, el cargadero HEB 160 ya está previsto) o V03 como puerta corredera a suelo con hoja de paso. Si no, aceptar que la colada se tiende cruzando el dormitorio.</p>
+  <p class="imp"><b>Impacto:</b> ≈ +600 a +900 € si V07 crece a 2,50 de alto (estimación)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#c0392b">Grave</span><span class="num">02</span><span class="doc">Planos REV 2 · REV 4 · REV 10 · Lucernario · patio</span></div>
+  <h3>El patio de luces se queda en 1,47 × 3,39 m (≈ 5 m²)</h3>
+  <p class="que">El lucernario (1,51 m de fondo) y el armario de instalaciones (0,71 m) se comen el patio original de ≈ 3,3 × 4,1 m. Al patio resultante abren el dormitorio 1 (su única ventana), el pasillo y el salón. Un patio tan estrecho da poca luz y ventilación al dormitorio.</p>
+  <p class="corr"><b>Corrección:</b> Que Javier confirme por escrito que el patio resultante cumple el mínimo del PGOU de San Sebastián de los Reyes para patios a los que abren dormitorios y que la licencia (obra mayor: hay estructura y cubierta) va con ese patio. Alternativa: reducir el lucernario a 3 bahías o mover el armario de instalaciones.</p>
+  <p class="imp"><b>Impacto:</b> Riesgo de licencia / habitabilidad; sin coste directo</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#c0392b">Grave</span><span class="num">03</span><span class="doc">Excel REVISIONES OFERTA (hoja OFERTAREV1) · 05.04 Armario cuatro hojas</span></div>
+  <h3>Error de copia en la propuesta de ahorro: 2.354,77 € de más</h3>
+  <p class="que">En la columna PROPUESTAS, el armario de cuatro hojas vale 5.474,30 €, el mismo importe que la línea de los tres armarios de tres hojas (05.03). Su oferta original es 4.159,38 €: la &#x27;propuesta&#x27; está por encima de la oferta.</p>
+  <p class="corr"><b>Corrección:</b> Aplicar el mismo −25 % que a los otros armarios: 4.159,38 × 0,75 = 3.119,54 €. El total propuesto pasa de 180.498,32 € a 178.143,55 €.</p>
+  <p class="imp"><b>Impacto:</b> −2.354,77 €</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#c0392b">Grave</span><span class="num">04</span><span class="doc">Excel REVISIONES OFERTA (pie de la hoja) · IVA · ICIO · parte real</span></div>
+  <h3>El total &#x27;con IVA e ICIO&#x27; (201.484,08 €) olvida el IVA de los 30.600 € de clima</h3>
+  <p class="que">La hoja calcula 149.898,32 × 1,10 + 30.600 (sin IVA) + ICIO del 4 % solo sobre 149.898,32. Los 30.600 € del instalador de clima/aerotermia llevan IVA (10 % si cumple las condiciones de obra de renovación; 21 % si el material supera el 40 % de la factura, lo normal en un instalador) y entran también en la base del ICIO. Además, los 180.498 € siguen incluyendo los capítulos 09 (clima, 26.927 €) y 10 (calefacción, 9.182 €) del constructor: no está claro qué sustituyen los 30.600 €.</p>
+  <p class="corr"><b>Corrección:</b> Con el error del armario corregido: ≈ 203.084 € si todo va al 10 % de IVA, ≈ 206.450 € si el instalador factura al 21 %. Pedir a Javier que aclare si los 30.600 € sustituyen a los capítulos 09 y 10 del constructor (entonces el total baja ≈ 5.500 €) o se suman.</p>
+  <p class="imp"><b>Impacto:</b> +1.600 € a +4.966 € sobre la cifra de la hoja</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#c0392b">Grave</span><span class="num">05</span><span class="doc">Oferta constructor · cap. 12 · 12.03 Hormigón de limpieza</span></div>
+  <h3>108,90 €/m² por un hormigón de limpieza (8.276 € en la oferta)</h3>
+  <p class="que">Es el mismo precio unitario que la partida anterior (12.02 &#x27;hueco acceso forjado sanitario&#x27;, 108,90 €/ud): parece copiado. Un hormigón de limpieza de 10 cm cuesta del orden de 12–20 €/m² y una solera armada de 15 cm, 35–45 €/m² (bases de precios habituales, p. ej. CYPE). Javier ha dejado la mitad de la medición al mismo precio (4.138 €).</p>
+  <p class="corr"><b>Corrección:</b> Pedir al constructor que describa qué es (¿solera armada?) y reprecie. Si es limpieza, 76 m² ≈ 1.000–1.500 €; si es solera, ≈ 2.700–3.400 €.</p>
+  <p class="imp"><b>Impacto:</b> −2.500 a −3.500 € sobre la propuesta (estimación)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">06</span><span class="doc">Oferta · cap. 04 · 04.05 Carpintería V04 (dorm. 1)</span></div>
+  <h3>V04 presupuestada de 2,00 × 1,50 cuando en el plano mide 2,00 × 2,50</h3>
+  <p class="que">El texto de la partida dice &#x27;2,00 × 1,50 (incluido cajón)&#x27;. El plano REV 10 la dibuja de 2,00 × 2,50 y la demolición 01.17 la describe &#x27;hueco de suelo a techo&#x27;. El precio (4.036 €, propuesto 3.027 €) puede corresponder a la ventana pequeña.</p>
+  <p class="corr"><b>Corrección:</b> Corregir el texto a 2,00 × 2,50 y pedir precio nuevo antes de dar por buena la rebaja.</p>
+  <p class="imp"><b>Impacto:</b> Probable sobrecoste al repreciar (≈ +20–25 % de vidrio, estimación)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">07</span><span class="doc">Mediciones 01.17 · plano REV 10 · oferta 04.03 · V01 (cocina, fachada)</span></div>
+  <h3>V01 se demuele &#x27;hasta el suelo&#x27; pero se dibuja y presupuesta con antepecho de 1,00 m</h3>
+  <p class="que">La partida 01.17 dice &#x27;HUECO V01: apertura lateral de 70 cm y rasgado de hueco hasta suelo&#x27;. El cuadro REV 10 la dibuja de 2,80 × 1,30 con la cota &#x27;1,00&#x27; de antepecho, y la oferta 04.03 la valora como 2,80 × 1,50 (incluido cajón). Una ventana hasta el suelo (2,80 × 2,50) es otra carpintería y otro precio, y cambia la cocina (la isla está a 60 cm de esa pared).</p>
+  <p class="corr"><b>Corrección:</b> Decidir si V01 llega al suelo o no, y que demolición, plano y presupuesto digan lo mismo.</p>
+  <p class="imp"><b>Impacto:</b> ≈ +1.000 € si va hasta el suelo (estimación)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">08</span><span class="doc">Planos REV 10 · oferta 04.04 · V03 (pasillo)</span></div>
+  <h3>V03: 2,20 de alto en el plano y 2,30 en el presupuesto, y precio fuera de escala</h3>
+  <p class="que">REV 10: corredera de 2 carriles 1,40 × 2,20 (una hoja fija y otra corredera), casillas de persiana sin marcar aunque la observación pide persiana autoblocante. Oferta 04.04: &#x27;corredera dos carriles 1,40 × 2,30 con persiana motorizada&#x27;, 4.955,26 € (propuesta 3.716 €). V06, de la misma tipología y tamaño parecido (1,25 × 2,50, 2 carriles, persiana motorizada), vale 3.292 €: V03 cuesta un 50 % más por menos vidrio.</p>
+  <p class="corr"><b>Corrección:</b> Unificar la altura (2,20 ó 2,30) y pedir que V03 se valore como V06.</p>
+  <p class="imp"><b>Impacto:</b> −1.000 a −1.500 € sobre la propuesta (estimación)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">09</span><span class="doc">Oferta · cap. 09 · plano REV 8 · 09.01–09.05 · XX09</span></div>
+  <h3>El esquema de clima mezcla equipos incompatibles y le falta una unidad exterior</h3>
+  <p class="que">El encabezado del capítulo habla de &#x27;ACS ERPT20X-VM2D&#x27; y &#x27;clima MXZ-6F-122VF&#x27; (multisplit); las partidas son la exterior PUZ-SWM140VAA (Ecodan aire-agua, 14 kW; el texto dice 12 kW), el hidrokit E-Gen &#x27;ERST20F&#x27; (el plano REV 8 escribe &#x27;ERSTA20F&#x27;) y dos unidades de conductos MPEZ-60 de expansión directa, que no pueden colgar de una exterior Ecodan. El constructor añade &#x27;XX09 EXTERIOR – CONEXIONADO 5.880 €&#x27; sin describir (mismo precio que la Ecodan). Javier ya lo marca &#x27;DUDA&#x27; y tiene a un instalador diseñándolo. El plano de clima rotula el hidrokit (595 × 680 × 1.600 mm, 104 kg) junto a la cocina y el presupuesto (04.09) lo mete en el armario del patio con lavadora y secadora.</p>
+  <p class="corr"><b>Corrección:</b> No aceptar ninguna cifra de clima hasta tener un esquema de principio con modelos, potencias, ubicación del hidrokit y precio cerrado del instalador (los 30.600 €).</p>
+  <p class="imp"><b>Impacto:</b> Pendiente del instalador</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">10</span><span class="doc">Oferta · cap. 08 · 03.02 · 02.10 · Solar fotovoltaica</span></div>
+  <h3>4 paneles de 125 W por 2.556 € (5 €/W) y partidas asociadas que siguen vivas</h3>
+  <p class="que">Los paneles de 125 W son tecnología de hace 15 años; hoy un panel es de 430–550 W por 150–250 €. Javier ha puesto el capítulo a 0 (&#x27;CONSIDERAR&#x27;), pero en la propuesta siguen la bancada de 6 m para placas (03.02, 1.248 €) y la ayuda de albañilería &#x27;Solar&#x27; (02.10, 233,70 €).</p>
+  <p class="corr"><b>Corrección:</b> Si se amplía la solar, hacerlo con paneles actuales y cambio de inversor (presupuesto aparte). Si no, quitar también 03.02 y la ayuda &#x27;Solar&#x27;.</p>
+  <p class="imp"><b>Impacto:</b> −1.481,70 € si se descarta la solar</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">11</span><span class="doc">Mediciones · oferta 05.06 · Bancada de cocina y aplacado</span></div>
+  <h3>El aplacado de pared se cobra al precio de la encimera</h3>
+  <p class="que">05.06 &#x27;bancada cocina y zócalo&#x27; mide 12,31 m: 8,11 m de encimera más 4,20 m de &#x27;aplacados&#x27; (frente entre encimera y muebles altos), todo a 399,19 €/m (4.914 €). Un aplacado del mismo material suele valer la mitad o menos que la encimera.</p>
+  <p class="corr"><b>Corrección:</b> Pedir precio separado para los 4,20 m de aplacado.</p>
+  <p class="imp"><b>Impacto:</b> −800 a −1.000 € (estimación)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">12</span><span class="doc">Planos REV 11 · oferta 04.01 · P01 puerta de entrada</span></div>
+  <h3>Acabado y ancho de la puerta de entrada distintos en plano y presupuesto</h3>
+  <p class="que">REV 11: hoja de 0,82 × 2,03, &#x27;acabado interior lacado blanco · acabado exterior lacado blanco&#x27;. Oferta 04.01 (2.176 €): &#x27;90 cm de paso, madera natural para exteriores por fuera, lacado gris antracita, melamina haya por dentro&#x27;.</p>
+  <p class="corr"><b>Corrección:</b> Decidir el acabado (lo lógico es que combine con las carpinterías RAL 7016) y el ancho, y que la partida lo refleje.</p>
+  <p class="imp"><b>Impacto:</b> Sin coste si se decide ahora</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">13</span><span class="doc">Planos REV 10 / REV 11 · oferta 04.09 · CER01 = ARE04</span></div>
+  <h3>El armario del patio está definido dos veces con materiales distintos</h3>
+  <p class="que">CER01 (150 × 220, aluminio RAL 7016 con palillería, 3.093,75 €; propuesta 1.546,88 €) en carpintería exterior y ARE04 (148 × 250, frente de madera Prodema con panel troquelado, sin partida) en carpintería interior. Es el mismo armario de lavadora/secadora.</p>
+  <p class="corr"><b>Corrección:</b> Dejar una sola definición; si se quiere el frente de madera, repreciar (Prodema es más caro).</p>
+  <p class="imp"><b>Impacto:</b> Depende de la decisión</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">14</span><span class="doc">Mediciones · oferta 02.04 · Recibido de premarcos de madera</span></div>
+  <h3>Faltan los premarcos de las dos puertas de baño</h3>
+  <p class="que">Cuenta 8 (3 dormitorios + entrada + 4 armarios). Las puertas de los baños (P03, 2 ud) no están. Además los armarios se llaman &#x27;2 hojas&#x27;/&#x27;3 hojas&#x27; aquí y &#x27;3 hojas&#x27;/&#x27;4 hojas&#x27; en el capítulo 05.</p>
+  <p class="corr"><b>Corrección:</b> Pasar la medición a 10 ud y unificar nombres.</p>
+  <p class="imp"><b>Impacto:</b> +100,80 €</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">15</span><span class="doc">Plano REV 9 · oferta 06.02–06.05 · Cuadro eléctrico y líneas</span></div>
+  <h3>Dos circuitos &#x27;cto.4&#x27;, secciones que no cuadran y potencia justa</h3>
+  <p class="que">El unifilar rotula &#x27;cto.4&#x27; tanto EXTERIORES como LAVADORA (debería ser cto.11). El presupuesto describe 3 × 10 A + 10 × 16 A + 2 × 20 A + 1 × 25 A y el esquema tiene 2 × 10 A, 9 × 16 A, 1 × 20 A, 1 × 25 A y un cargador de coche de 32 A. Las líneas 06.04 (alumbrado exterior) y 06.05 (aerotermia) copian el texto &#x27;línea de climatización 3 × 6 mm²&#x27; y el esquema pone la aerotermia a 2 × 2,5 mm². Con cargador de 32 A, aerotermia y clima, un IGA de 40 A (9,2 kW) obliga a gestión de carga o a más potencia.</p>
+  <p class="corr"><b>Corrección:</b> Corregir el unifilar, unificar secciones y decidir la potencia a contratar.</p>
+  <p class="imp"><b>Impacto:</b> Posible sobrecoste de potencia / acometida</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">16</span><span class="doc">Oferta · cap. 10 · 10.03 Sistema de control del suelo radiante</span></div>
+  <h3>Describe un control de caldera con válvula de 3 vías</h3>
+  <p class="que">Con aerotermia Ecodan el control de impulsión y la curva de compensación van en el controlador FTC del propio equipo. La partida (687,50 €; propuesta 618,75 €) es genérica de instalación con caldera.</p>
+  <p class="corr"><b>Corrección:</b> Que el instalador de clima diga qué control hace falta; probablemente sobra.</p>
+  <p class="imp"><b>Impacto:</b> −618,75 € si sobra</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#b08d57">Importante</span><span class="num">17</span><span class="doc">Mediciones · oferta 02.10 · Ayudas de albañilería</span></div>
+  <h3>Se paga una ayuda de albañilería para &#x27;Gas&#x27; y no hay gas</h3>
+  <p class="que">02.10 cuenta 5 ayudas (eléctrica, fontanería, gas, solar, calefacción) a 233,70 €. El proyecto es todo eléctrico. El constructor añadió además XX1 y XX2 &#x27;Ayudas instalaciones&#x27; (250 + 250 €) duplicadas, que Javier ya ha puesto a 0.</p>
+  <p class="corr"><b>Corrección:</b> Quitar la ayuda de gas (y la solar si no se amplía).</p>
+  <p class="imp"><b>Impacto:</b> −233,70 € (−467,40 € sin solar)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">18</span><span class="doc">Mediciones 01.10 · 02.08 · 02.16 · cap. 12 · Superficie interior vs patio</span></div>
+  <h3>El patio (15,75 m²) se cuenta como vivienda en demolición, pavimento y pintura de techos</h3>
+  <p class="que">106,95 m² de &#x27;superficie vivienda&#x27; incluyen el patio. En el reformado el interior (con lucernario) es ≈ 97–98 m² y el patio abierto ≈ 5 m² (el capítulo 12 solo mide 2 m² de pavimento exterior en el patio interior).</p>
+  <p class="corr"><b>Corrección:</b> Ajustar 02.08 y 02.16 a ≈ 97,5 m² y 12.06 a ≈ 5 m².</p>
+  <p class="imp"><b>Impacto:</b> −≈ 500 € netos</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">19</span><span class="doc">Oferta · cap. 10 · 10.01 Suelo radiante 90 m²</span></div>
+  <h3>El suelo radiante mide 90 m² y el interior reformado son ≈ 97 m²</h3>
+  <p class="que">La cifra de 90 m² es redonda (estimada). Con el lucernario incorporado al salón, la superficie a calefactar ronda 97 m² (baños incluidos).</p>
+  <p class="corr"><b>Corrección:</b> Medir sobre el plano definitivo; prever ≈ 7 m² más.</p>
+  <p class="imp"><b>Impacto:</b> +≈ 700 € (7 m² × 96 €)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">20</span><span class="doc">Plano REV 4 · mediciones 01.18–01.19 · Viga HEB 160</span></div>
+  <h3>La HEB 160 se mide con 3,50 m: solo encaja si apoya en el murete del armario</h3>
+  <p class="que">El cargadero sobre V07 va del pilar de fábrica (y 5,6) a la medianera (y 10,0): 4,1 m de luz. Se miden 3,5 m de viga (149 kg) y 3 × 3,5 m de forro, que cuadran si la viga apoya en el lateral de obra del armario de instalaciones (luz 3,4 m). Si ese armario es de aluminio sin murete, la viga es de 4,4 m. Además, el IPE 160 &#x27;a canto de forjado&#x27; se ancla con placas y tacos M16 a un forjado de 1976.</p>
+  <p class="corr"><b>Corrección:</b> Que el calculista confirme apoyos y longitudes, y una cata previa del canto del forjado.</p>
+  <p class="imp"><b>Impacto:</b> +≈ 250 € si la viga es de 4,4 m (estimación)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">21</span><span class="doc">Mediciones · oferta 02.06 / 02.17 · Yesos y pintura de lo que se conserva</span></div>
+  <h3>No hay partida de repaso de yeso en las paredes que se conservan</h3>
+  <p class="que">La pintura de paredes (185,14 m²) sí cubre la superficie real de la casa (≈ 170–180 m² descontando huecos, armarios y alicatados), pero el yeso nuevo (185 m²) solo va en tabiques nuevos y cámaras: las caras de medianera que no se trasdosan se pintan sobre el yeso viejo sin partida de reparación.</p>
+  <p class="corr"><b>Corrección:</b> Añadir una partida de repaso/lijado de yesos existentes o dejarlo escrito dentro de la pintura.</p>
+  <p class="imp"><b>Impacto:</b> A valorar (pequeño)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">22</span><span class="doc">Plano REV 11 · ARE05 · P02 · 05.04</span></div>
+  <h3>Un armario de 150 cm con tres puertas de 55 cm y rótulos copiados</h3>
+  <p class="que">ARE05 (pasillo) mide 1,50 m y lleva &#x27;dos cuerpos, 3 puertas de 55 cm&#x27; = 1,65 m: no caben. Las tres puertas P02 (dormitorios) llevan &#x27;UBICACIÓN: BAÑO 1 / BAÑO 2&#x27; (copiado de P03). En el presupuesto, 05.04 &#x27;armario cuatro hojas&#x27; describe &#x27;conjunto de armarios de tres hojas&#x27;.</p>
+  <p class="corr"><b>Corrección:</b> Corregir el despiece de ARE05 (3 × 48 cm) y los rótulos.</p>
+  <p class="imp"><b>Impacto:</b> —</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">23</span><span class="doc">Plano REV 10 (cuadro V02) · oferta 04.08 · V02 ventanas de techo</span></div>
+  <h3>Medidas, protección solar y precio de V02 por aclarar</h3>
+  <p class="que">Etiqueta &#x27;V02 (120 × 110)&#x27; y el alzado acota 0,75 × 1,22; en la planta las 4 bahías miden ≈ 1,0 m. El cuadro marca &#x27;estor motorizado&#x27; y el presupuesto &#x27;persiana corredera motorizada&#x27; (productos y precios distintos). La observación &#x27;persianas autoblocantes 5 UD&#x27; está copiada de las ventanas de fachada (son 4 ventanas de techo); V05 y V06 ponen &#x27;2 UD&#x27; de persianas siendo 1 ventana cada una. La partida (4 × 3.524 € = 14.096 €, el 31 % del capítulo; propuesta 10.572 €) merece una oferta alternativa de ventana de tejado estándar (Velux/Fakro) con persiana, que suele quedar en 1.500–2.500 € colocada.</p>
+  <p class="corr"><b>Corrección:</b> Fijar medida y protección solar de V02 (condicionan precio y estructura) y pedir una alternativa estándar.</p>
+  <p class="imp"><b>Impacto:</b> Posible ahorro relevante (estimación: −2.000 a −4.000 €)</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">24</span><span class="doc">Plano REV 13 · Patinillos · Solatube</span></div>
+  <h3>Dos patinillos rotulados &#x27;PATINILLO 1&#x27; y dos Solatube dibujados</h3>
+  <p class="que">La revisión de Javier deja un solo Solatube (una chimenea y una impermeabilización menos), pero los planos siguen con dos. Los dos patinillos tienen el mismo nombre.</p>
+  <p class="corr"><b>Corrección:</b> Actualizar REV 13 (y REV 3/REV 9) a la versión decidida.</p>
+  <p class="imp"><b>Impacto:</b> —</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">25</span><span class="doc">Oferta (textos y códigos) · 06.07 · 06.08 · 06.10 · 07.xx · cap. 11 · cap. 13 · XX3–XX7</span></div>
+  <h3>Erratas, códigos repetidos y huecos de numeración en el presupuesto</h3>
+  <p class="que">06.07, 06.08 y 06.10 empiezan &#x27;Instalación eléctrica en cocina&#x27;; no existen 07.03 ni 07.06; los códigos 01.12–01.15 se repiten en el capítulo 11 (residuos de construcción) con el mismo código que los de demolición; el capítulo 13 totaliza como &#x27;Total 12&#x27;; &#x27;inodoro tanque alto&#x27; (¿bajo o suspendido?); las mosquiteras XX3–XX7 (2.064 €) no dicen a qué ventana van y cuestan 427–530 €/ud, caro para correderas.</p>
+  <p class="corr"><b>Corrección:</b> Limpiar antes de firmar el contrato: lo que se firma es lo que vale.</p>
+  <p class="imp"><b>Impacto:</b> —</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">26</span><span class="doc">Todos los planos · Símbolo radial en el patio · rectángulo discontinuo del jardín</span></div>
+  <h3>Dos elementos dibujados sin leyenda</h3>
+  <p class="que">En el patio hay un símbolo radial de ≈ 3 m superpuesto al armario CER01 (¿árbol?, ¿luminaria?). En el jardín delantero, un rectángulo discontinuo de 4,1 × 2,4 m (¿aparcamiento?, ¿césped?, ¿pérgola?). En el visor 3D se ha dejado como césped.</p>
+  <p class="corr"><b>Corrección:</b> Preguntar a Javier qué son.</p>
+  <p class="imp"><b>Impacto:</b> —</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">27</span><span class="doc">Diseño · Lucernario · TV · puertas de baño</span></div>
+  <h3>Detalles de diseño a valorar</h3>
+  <p class="que">Pendiente del lucernario del 2 % (mínimo; con ≥ 5 % el vidrio escurre y se ensucia menos). El mueble de TV queda justo bajo las ventanas de techo (reflejos en la pantalla). Puertas de baño de 0,72 m (paso ≈ 0,70): correctas, pero si se quiere accesibilidad, 0,82.</p>
+  <p class="corr"><b>Corrección:</b> Valorar con Javier.</p>
+  <p class="imp"><b>Impacto:</b> —</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#6b6f76">Menor</span><span class="num">28</span><span class="doc">Presupuesto global · Lo que no está</span></div>
+  <h3>Conceptos fuera del presupuesto y sin fondo de imprevistos</h3>
+  <p class="que">No aparecen: honorarios de proyecto y dirección de obra, licencia y tasas (el ICIO sí), seguro de obra, electrodomésticos, luminarias (pasan a propietarios), toallero eléctrico en baños, cancela/pérgola/jardinería, ni un fondo de imprevistos. En una casa de 1976 con forjado sanitario, lo habitual es reservar un 5–10 % (9.000–18.000 €).</p>
+  <p class="corr"><b>Corrección:</b> Tenerlo en la cuenta de Álvaro aunque no esté en la oferta.</p>
+  <p class="imp"><b>Impacto:</b> +5–10 % de reserva</p>
+</article>
+
+<article class="card">
+  <div class="meta"><span class="chip" style="background:#2e7d32">Ya corregido</span><span class="num">29</span><span class="doc">Revisión de Javier (26-10-2026) · varias</span></div>
+  <h3>Ya detectado y corregido por Javier</h3>
+  <p class="que">Textos de V07 (2,70 × 1,30 → 2,80 × 1,90) y V01 (1,65 × 1,50 → 2,80 × 1,50); capítulo 11 de residuos que la oferta no incluía (+4.103,75 €); ayudas duplicadas XX1/XX2 a 0; forrado de estructura por ml de cada cara (−2.325 €); falso techo desmontable caro; instalación exteriores que la descripción daba por el total; un solo Solatube; pintura al 50 % (pintor conocido); armarios −25 %; patios: ejecutar encima sin rebajar (−43,7 m³ de tierras); vidrio 4+4/12/3+3 y dos carriles en las correderas.</p>
+  <p class="corr"><b>Corrección:</b> Nada que hacer: consta aquí para no repetirlo.</p>
+  <p class="imp"><b>Impacto:</b> incluido en los 180.498 €</p>
+</article>
+
+<h2>Preguntas para Javier (y Miguel)</h2>
+<ol><li>¿Cómo se entra al patio y al armario de la lavadora sin pasar por el dormitorio 1? (V07 a suelo o V03 como puerta)</li>
+<li>¿Cumple el patio resultante (1,47 × 3,39 m) la normativa municipal para el dormitorio 1? ¿Va así en la licencia?</li>
+<li>Clima: esquema de principio definitivo (modelos, potencias, dónde va el hidrokit) y precio cerrado del instalador. ¿Los 30.600 € sustituyen a los capítulos 09 y 10 del constructor?</li>
+<li>V01: ¿hasta el suelo (demolición 01.17) o con antepecho de 1,00 (cuadro)? V04: precio a 2,00 × 2,50. V03: ¿2,20 ó 2,30? ¿por qué cuesta un 50 % más que V06? V02: ¿120 × 110 ó 75 × 122, estor o persiana?</li>
+<li>Puerta de entrada P01: ¿blanca (plano) o madera/antracita (presupuesto)? ¿0,82 ó 0,90 de paso? Armario del patio: ¿aluminio (CER01) o Prodema (ARE04)?</li>
+<li>12.03 Hormigón de limpieza a 108,90 €/m²: ¿qué es y a qué precio real? 05.06: precio del aplacado de cocina separado de la encimera.</li>
+<li>¿Se amplía la solar? Si no, quitar bancada (03.02) y ayuda solar; si sí, con paneles actuales.</li>
+<li>Viga HEB 160: ¿apoya en el murete del armario (3,5 m) o llega a la medianera (4,4 m)? ¿Cata del canto del forjado para el IPE?</li>
+<li>Potencia eléctrica a contratar con cargador de coche de 32 A + aerotermia + clima; corregir el unifilar (dos &#x27;cto.4&#x27;).</li>
+<li>¿Qué son el símbolo radial del patio y el rectángulo discontinuo del jardín?</li></ol>
+
+<h2>Qué se ha hecho</h2>
+<ul class="files">
+<li><b>Visor 3D realista</b> del estado reformado (muros, huecos, carpinterías y mobiliario medidos sobre el plano REV 2; modos exterior, sin cubierta, planta y paseo; día y tarde): <i>visor-3d-casa-fco-quevedo-27.html</i>.</li>
+<li><b>Excel de revisión</b> con la oferta revisada de Javier, una columna de comentarios Kaizen y la propuesta corregida: <i>261030_FRANCISCO.QUEVEDO_OFERTA_REVISION_KAIZEN.xlsx</i>.</li>
+<li>Los 20 documentos recibidos están copiados en la carpeta <i>01 DOCUMENTOS RECIBIDOS (correos 30-10-2026)</i>.</li>
+</ul>
+<p class="small">Las estimaciones de precios son órdenes de magnitud a confirmar con el constructor; las cifras de oferta, revisión y propuesta se han tomado tal cual de los Excel recibidos y se han recalculado sus sumas (cuadran). Las medidas del plano se han tomado sobre el dibujo vectorial (escala calibrada con las cotas del estado original, ±5 cm).</p>
+<footer>Kaizen Patrimonio · revisión interna para Álvaro y María · 30-10-2026 · versión 2</footer>
+</div></body></html>
